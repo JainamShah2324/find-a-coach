@@ -17,21 +17,17 @@ const router = createRouter({
         {
             path: '/coaches',
             name: 'coaches',
-            component: CoachesList,
-            children: [
-                {
-                    path: '/:id',
-                    name: 'coach',
-                    component: CoachDetail,
-                    children: [
-                        {
-                            path: '/contact',
-                            name: 'coach.contact',
-                            component: ContactCoach
-                        }
-                    ]
-                }
-            ]
+            component: CoachesList
+        },
+        {
+            path: '/coach/:id',
+            name: 'coach',
+            component: CoachDetail,
+            children: [{
+                path: 'contact',
+                name: 'coach.contact',
+                component: ContactCoach
+            }]
         },
         {
             path: '/register',
